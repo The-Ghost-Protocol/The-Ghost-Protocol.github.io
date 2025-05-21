@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>mahen-mahindaratne.online</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <meta name="author" content="The Ghost Protocol">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      display: flex;
+      flex-direction: column;
+    }
+    video.bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+    }
+    .overlay {
+      background: rgba(0, 0, 0, 0.30); 
+    }
+  </style>
+</head>
+<body class="text-white overflow-x-hidden">
+
+  <!-- Modal -->
+  <div id="welcomeModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+    <div class="bg-white text-black rounded-lg shadow-lg p-6 w-96 text-center">
+      <h2 class="text-xl font-semibold mb-4">Welcome to my Portfolio</h2>
+      <p class="mb-6"><i>Procedamus in pace! In nomine Christi, amen!</i></p>
+      <button onclick="closeModal()" class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800">
+        Enter
+      </button>
+    </div>
+  </div>
+
+  <!-- Date/Time + Translator Bar -->
+  <div class="bg-black bg-opacity-80 text-xs p-2 flex justify-between px-6 items-center fixed top-0 w-full z-50">
+    <div id="colombo-time">Time in Colombo: --:--</div>
+  </div>
+
+   <!-- Navigation -->
+  <nav class="bg-black bg-opacity-70 text-white p-4 mt-10 fixed top-8 w-full z-40">
+  <div class="flex justify-between items-center max-w-6xl mx-auto">
+    <div class="flex items-center gap-4">
+      <h1 class="text-2xl tracking-widest">Mahen Mahindaratne</h1>
+      <!-- Social Media Icons -->
+      <div class="flex gap-3 text-xl">
+        <a href="https://github.com/The-Ghost-Protocol" target="_blank" class="hover:text-yellow-500">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.youtube.com/@MahenMahindaratne88" target="_blank" class="hover:text-yellow-500">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/mahen-mahindaratne-005154366/" target="_blank" class="hover:text-yellow-500">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+    </div>
+    <ul class="flex gap-6 text-sm uppercase">
+      <li><a href="#projects" class="hover:text-yellow-500">Projects</a></li>
+      <li><a href="#about" class="hover:text-yellow-500">About</a></li>
+      <li><a href="#contact" class="hover:text-yellow-500">Contact</a></li>
+    </ul>
+  </div>
+  </nav>
+
+  <!-- Background Video -->
+  <video class="bg-video" autoplay muted loop playsinline>
+    <source src="https://cdn.jsdelivr.net/gh/The-Ghost-Protocol/The-Ghost-Protocol.github.io@main/41042-427854697.mp4" type="video/mp4" />
+    Your browser does not support HTML5 video.
+  </video>
+
+  <!-- Hero Section -->
+  <main class="min-h-screen flex flex-col justify-center items-center text-center relative z-10 px-4">
+    <div class="overlay absolute inset-0"></div>
+    <div class="relative z-10">
+      <h1 class="text-5xl font-serif tracking-widest" aria-label="Hotel logo">Welcome to my Portfolio</h1>
+    </div>
+  </main>
+
+  <section id="projects" class="bg-black bg-opacity-50 text-white py-16 px-4 relative z-10">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-4xl mb-6">My Projects</h2>
+
+    <!-- Swiper container -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        
+        <!-- Project 1 -->
+        <div class="swiper-slide">
+          <a href="https://static-web-applications-la-rezidenza.onrender.com" target="_blank" class="block bg-gray-800 hover:bg-gray-700 rounded-xl overflow-hidden shadow-lg transition-transform transform hover:scale-105">
+            <img src="project_1.png" alt="Project 1 Thumbnail" class="w-full h-48 object-cover">
+            <div class="p-4 text-left">
+              <h3 class="text-xl font-semibold mb-2">La Residenza Navona | Roma</h3>
+              <p class="text-sm text-gray-300">This is a design concept for a static website for an assumed hospitality venue at Piazza Navona, Rome, Italy.</p>
+            </div>
+          </a>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="swiper-slide">
+          <a href="https://static-web-applications-la-dimora.onrender.com" target="_blank" class="block bg-gray-800 hover:bg-gray-700 rounded-xl overflow-hidden shadow-lg transition-transform transform hover:scale-105">
+            <img src="project_2.png" alt="Project 2 Thumbnail" class="w-full h-48 object-cover">
+            <div class="p-4 text-left">
+              <h3 class="text-xl font-semibold mb-2">La Dimora Veneziana | Venezia</h3>
+              <p class="text-sm text-gray-300">This is a design concept for a static website for an assumed hospitality venue in Venice, Italy.</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="swiper-slide">
+          <a href="https://The-Ghost-Protocol.github.io/random-quote-generator-rome/index.html" target="_blank" class="block bg-gray-800 hover:bg-gray-700 rounded-xl overflow-hidden shadow-lg transition-transform transform hover:scale-105">
+            <img src="project_3.png" alt="Project 2 Thumbnail" class="w-full h-48 object-cover">
+            <div class="p-4 text-left">
+              <h3 class="text-xl font-semibold mb-2">Rome | Total War</h3>
+              <p class="text-sm text-gray-300">This is a a Random Quote Machine. It features Quotes from the Loading Page of Rome: Total War (2004)</p>
+            </div>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Optional navigation buttons -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+
+      <!-- Optional pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="bg-black bg-opacity-70 text-white py-16 px-4 relative z-10">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl mb-6">About Me</h2>
+      <p class="text-lg leading-relaxed">
+        I’m a web developer specializing in building interactive web applications. While my core expertise lies in the MERN stack, I’m also proficient in integrating other front-end and back-end frameworks, and can work seamlessly with your preferred database solution. From concept to deployment, I can help bring your idea to life—integrating your chosen DNS, hosting services, and CDNs to get your application online quickly and efficiently.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="bg-black bg-opacity-50 text-white py-16 px-4 relative z-10">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl mb-8">Lets get in touch!</h2>
+      <form id="contact-form" class="space-y-6 text-left" method="POST" action="/contact">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label for="name" class="block mb-2 text-sm font-semibold">Name</label>
+            <input type="text" id="name" name="name" required
+              class="w-full p-3 rounded-md bg-black bg-opacity-40 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+          </div>
+          <div>
+            <label for="email" class="block mb-2 text-sm font-semibold">Email</label>
+            <input type="email" id="email" name="email" required
+              class="w-full p-3 rounded-md bg-black bg-opacity-40 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+          </div>
+        </div>
+        <div>
+          <label for="message" class="block mb-2 text-sm font-semibold">Message</label>
+          <textarea id="message" name="message" rows="5" required
+            class="w-full p-3 rounded-md bg-black bg-opacity-40 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"></textarea>
+        </div>
+        <div class="text-center">
+          <button type="submit"
+            class="bg-yellow-500 text-black font-semibold px-6 py-3 rounded-md hover:bg-yellow-600 transition duration-200">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="bg-black text-center text-xs text-gray-400 py-8">
+    <p class="mb-2">Mahen Mahindaratne</p>
+    <p class="mb-1">Phone: +94 77 2 082 399</p>
+    <p class="mb-1">Email: <a href="mailto:the-ghost-protocol-online@protonmail.com" class="underline hover:text-yellow-500">the-ghost-protocol-online@protonmail.com</a></p>
+    <p class="mt-2 text-gray-500">
+    Designed by <a href="https://code.mahen-mahindaratne.online" target="_blank" rel="noopener noreferrer" class="underline hover:text-yellow-500">The Ghost Protocol</a>
+    </p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('welcomeModal').classList.remove('hidden');
+    });
+
+    function closeModal() {
+      document.getElementById('welcomeModal').classList.add('hidden');
+    }
+    // Real-time Colombo clock
+    function updateColomboTime() {
+      const options = {
+        timeZone: 'Asia/Colombo',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+      };
+      const time = new Intl.DateTimeFormat([], options).format(new Date());
+      document.getElementById('colombo-time').textContent = `Time in Colombo: ${time}`;
+    }
+    setInterval(updateColomboTime, 1000);
+    updateColomboTime();
+    
+    document.getElementById('contact-form').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const formData = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      message: document.getElementById('message').value,
+    };
+
+    try {
+      const res = await fetch('https://portfolio-4-0-backend.onrender.com/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await res.json();
+      alert(result.message || 'Message sent successfully!');
+    } catch (error) {
+      console.error(error);
+      alert('Something went wrong.');
+    }
+  });
+
+  const swiper = new Swiper('.mySwiper', {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
+  });
+  </script>
+
+</body>
+</html>
