@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>La Dimora Veneziana</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="description" content="An exclusive Venetian retreat veiled in mystery and elegance.">
+  <meta name="keywords" content="Venice Hotel, Luxury Hotel Venice, Venice">
+  <meta name="author" content="The Ghost Protocol">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    body {
+      font-family: 'Playfair Display', serif;
+      display: flex;
+      flex-direction: column;
+    }
+    .bg-image {
+      background-image: url('venice-4704342.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body class="text-white overflow-x-hidden">
+
+  <!-- Modal -->
+  <div id="welcomeModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+    <div class="bg-white text-black rounded-lg shadow-lg p-6 w-96 text-center">
+      <h2 class="text-xl font-semibold mb-4">Welcome to La Dimora Veneziana</h2>
+      <p class="mb-6">This is a design concept for a static website<br />for an assumed hospitality venue in<br />Venice, Italy.</p>
+      <button onclick="closeModal()" class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800">
+        Enter
+      </button>
+    </div>
+  </div>
+
+  <!-- Background Image -->
+  <div class="bg-image"></div>
+
+  <!-- Top Bar -->
+  <div class="bg-black bg-opacity-80 text-xs p-2 flex justify-between px-6 items-center fixed top-0 w-full z-50">
+    <div id="venice-time">Time in Venice: --:--</div>
+    <div class="flex gap-2 items-center">
+      <button onclick="translatePage('en')" aria-label="English">
+        <img src="https://flagcdn.com/us.svg" alt="English" class="w-6 h-4 rounded shadow">
+      </button>
+      <button onclick="translatePage('it')" aria-label="Italian">
+        <img src="https://flagcdn.com/it.svg" alt="Italian" class="w-6 h-4 rounded shadow">
+      </button>
+    </div>
+    <div id="google_translate_element" style="position: absolute; left: -9999px; top: 0;"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="bg-black bg-opacity-70 text-white p-4 mt-10 fixed top-8 w-full z-40">
+    <div class="flex justify-between items-center max-w-6xl mx-auto">
+      <h1 class="text-2xl tracking-widest">La Dimora Veneziana</h1>
+      <ul class="flex gap-6 text-sm uppercase">
+        <li><a href="#home" class="hover:text-yellow-500">Home</a></li>
+        <li><a href="#about" class="hover:text-yellow-500">About</a></li>
+        <li><a href="#contact" class="hover:text-yellow-500">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <main id="home" class="min-h-screen flex flex-col justify-center items-center text-center relative z-10 px-4">
+    <div class="overlay absolute inset-0"></div>
+    <div class="relative z-10">
+      <h1 class="text-5xl tracking-widest mb-4">La Dimora Veneziana</h1>
+      <h2 class="text-xl md:text-2xl italic">
+        “Elegance veiled in shadow, born of ancient waters.”
+      </h2>
+    </div>
+  </main>
+
+   <!-- Embedded Soundtrack -->
+  <section class="py-16 bg-black bg-opacity-80 text-center px-4">
+    <h2 class="text-3xl mb-6">Featured Media</h2>
+    <div class="flex justify-center">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/9_TD_bef5wY?autoplay=1&mute=1&loop=1&playlist=9_TD_bef5wY"
+        title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="bg-black bg-opacity-70 text-white py-16 px-4 relative z-10">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl mb-6">The Experience</h2>
+      <p class="text-lg leading-relaxed">
+        Hidden deep within the heart of Venice, La Dimora Veneziana welcomes those seeking an experience beyond luxury—
+        an indulgence in mystery, ritual, and refinement. Once a sanctuary of scholars and nobility, it now opens discreetly
+        to the world's most discerning travelers.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="bg-black bg-opacity-50 text-white py-16 px-4 relative z-10">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl mb-8">Inquire</h2>
+      <form class="space-y-6 text-left">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label for="name" class="block mb-2 text-sm font-semibold">Name</label>
+            <input type="text" id="name" name="name" required
+              class="w-full p-3 rounded-md bg-black bg-opacity-40 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+          </div>
+          <div>
+            <label for="email" class="block mb-2 text-sm font-semibold">Email</label>
+            <input type="email" id="email" name="email" required
+              class="w-full p-3 rounded-md bg-black bg-opacity-40 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+          </div>
+        </div>
+        <div>
+          <label for="message" class="block mb-2 text-sm font-semibold">Message</label>
+          <textarea id="message" name="message" rows="5" required
+            class="w-full p-3 rounded-md bg-black bg-opacity-40 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"></textarea>
+        </div>
+        <div class="text-center">
+          <button type="submit"
+            class="bg-yellow-500 text-black font-semibold px-6 py-3 rounded-md hover:bg-yellow-600 transition duration-200">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="bg-black text-center text-xs text-gray-400 py-8">
+    <p class="mb-2">La Dimora Veneziana · Venezia</p>
+    <p class="mb-1">Phone: +39 312 345 6789 | +1 (555) 123-4567</p>
+    <p class="mb-1">Email: <a href="mailto:info@ladimoraveneziana.it" class="underline hover:text-yellow-500">info@ladimoraveneziana.it</a></p>
+    <p class="mt-2 text-gray-500">
+    Designed by <a href="https://www.mahen-mahindaratne.online" target="_blank" rel="noopener noreferrer" class="underline hover:text-yellow-500">The Ghost Protocol</a>
+    </p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Welcome Modal
+    window.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('welcomeModal').classList.remove('hidden');
+    });
+
+    function closeModal() {
+      document.getElementById('welcomeModal').classList.add('hidden');
+    }
+
+    // Time in Venice
+    function updateVeniceTime() {
+      const options = {
+        timeZone: 'Europe/Rome',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+      };
+      const time = new Intl.DateTimeFormat([], options).format(new Date());
+      document.getElementById('venice-time').textContent = `Time in Venice: ${time}`;
+    }
+    setInterval(updateVeniceTime, 1000);
+    updateVeniceTime();
+
+    // Google Translate
+    function translatePage(lang) {
+      const select = document.querySelector("select.goog-te-combo");
+      if (select) {
+        select.value = lang;
+        select.dispatchEvent(new Event("change", { bubbles: true }));
+      }
+    }
+
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,it',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+  </script>
+
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
